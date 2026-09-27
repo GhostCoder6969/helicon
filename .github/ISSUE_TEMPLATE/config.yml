@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Question or setup help
+    url: https://github.com/HarjjotSinghh/helicon/discussions
+    about: Ask in Discussions. Setups that did not work belong there too.
+  - name: Security vulnerability
+    url: https://github.com/HarjjotSinghh/helicon/security/advisories/new
+    about: Report privately, never in a public issue.

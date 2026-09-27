@@ -1,0 +1,55 @@
+name: Bug report
+description: Something in Helicon does not work the way it should
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. Please search [open issues](https://github.com/HarjjotSinghh/helicon/issues) first. Security problems go to a [private report](https://github.com/HarjjotSinghh/helicon/security/advisories/new), never here.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what you saw instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open a project
+        2. Start a thread
+        3. ...
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Helicon version
+      description: Settings shows it, or the installer file name.
+      placeholder: 0.17.1
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - Windows (native)
+        - Windows (WSL2)
+        - macOS
+        - Linux
+        - Web app (from source)
+    validations:
+      required: true
+  - type: input
+    id: muse
+    attributes:
+      label: muse --version
+      placeholder: "muse 1.2.3"
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or screenshots
+      description: Remove tokens, paths or anything private before pasting.

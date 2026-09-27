@@ -9,6 +9,8 @@
 [![Downloads](https://img.shields.io/github/downloads/HarjjotSinghh/helicon/total.svg?label=installer%20downloads)](https://github.com/HarjjotSinghh/helicon/releases)
 [![Latest release](https://img.shields.io/github/v/release/HarjjotSinghh/helicon.svg?label=latest)](https://github.com/HarjjotSinghh/helicon/releases/latest)
 [![Stars](https://img.shields.io/github/stars/HarjjotSinghh/helicon.svg?style=social)](https://github.com/HarjjotSinghh/helicon/stargazers)
+[![Hacktoberfest](https://img.shields.io/badge/Hacktoberfest-2026-ff8ae2.svg)](https://github.com/HarjjotSinghh/helicon/issues?q=is%3Aissue+is%3Aopen+label%3Ahacktoberfest)
+[![Good first issues](https://img.shields.io/github/issues/HarjjotSinghh/helicon/good%20first%20issue.svg?label=good%20first%20issues&color=7057ff)](https://github.com/HarjjotSinghh/helicon/contribute)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/assets/readme-hero-dark.png" />
@@ -159,6 +161,8 @@ npm run dev --workspace @helicon/web
 # open http://127.0.0.1:5173
 ```
 
+No `muse` on this machine? `npm run dev:demo --workspace @helicon/web` runs the same UI against an in-memory client with sample projects and threads, no server needed.
+
 The interface itself lives in `packages/ui` (state model in `src/model`, components in `src/components`); design tokens and the visual system are documented in [docs/DESIGN.md](docs/DESIGN.md).
 
 ```bash
@@ -210,6 +214,8 @@ back to asking GitHub, as it always did.
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md). PRs welcome. See [SECURITY.md](SECURITY.md) for reporting vulnerabilities.
+
+**Hacktoberfest:** Helicon takes part. Pick an issue labelled [`good first issue`](https://github.com/HarjjotSinghh/helicon/contribute) or [`help wanted`](https://github.com/HarjjotSinghh/helicon/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22), comment to claim it, and open a PR. Most of them don't need a Muse Code subscription. Every open PR gets a first review within 48 hours, and everyone who lands a change is credited in the [changelog](docs/CHANGELOG.md).
 
 Not a code change? [Discussions](https://github.com/HarjjotSinghh/helicon/discussions) takes questions, setups that did not work, and anything you want Helicon to do that it does not.
 

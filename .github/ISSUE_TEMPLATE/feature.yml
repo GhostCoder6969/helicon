@@ -1,0 +1,24 @@
+name: Feature request
+description: Something you want Helicon to do
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What are you trying to do, and what gets in the way today?
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What you'd like
+      description: How you picture it working. Sketches welcome.
+    validations:
+      required: true
+  - type: checkboxes
+    id: build
+    attributes:
+      label: Contributing
+      options:
+        - label: I'd like to build this myself
