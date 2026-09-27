@@ -1,6 +1,6 @@
 import { StrictMode, useState } from "react";
 import { createRoot } from "react-dom/client";
-import { HeliconApp } from "@helicon/ui";
+import { HeliconApp, type HeliconClient } from "@helicon/ui";
 import { Connect } from "./Connect.js";
 import { desktopFrame, titlebarOverlay, bindDesktopZoom } from "./frame.js";
 import { bindDesktopLinks } from "./links.js";
@@ -21,7 +21,7 @@ if (!root) {
  * `#/connect` picks the daemon this page talks to. It is read before the app mounts, because the
  * client reads its address once at module load and every open stream belongs to that address.
  */
-function Root() {
+function Root({ makeClient }: { makeClient: () => HeliconClient }) {
   const [connecting, setConnecting] = useState(window.location.hash === "#/connect");
   if (connecting) {
     return (
@@ -36,7 +36,7 @@ function Root() {
   }
   return (
     <HeliconApp
-      client={new WebHeliconClient()}
+      client={makeClient()}
       frame={desktopFrame()}
       titlebarOverlay={titlebarOverlay()}
       updater={desktopUpdater()}
@@ -45,8 +45,22 @@ function Root() {
   );
 }
 
-createRoot(root).render(
-  <StrictMode>
-    <Root />
-  </StrictMode>,
+/**
+ * `npm run dev:demo` swaps the server for an in-memory client with sample projects and threads, so
+ * the UI can be worked on without muse. The flag is fixed at build time, so release builds drop it.
+ */
+async function clientFactory(): Promise<() => HeliconClient> {
+  if (import.meta.env.MODE === "demo") {
+    const { DemoClient } = await import("./demo/client.js");
+    return () => new DemoClient();
+  }
+  return () => new WebHeliconClient();
+}
+
+void clientFactory().then((makeClient) =>
+  createRoot(root).render(
+    <StrictMode>
+      <Root makeClient={makeClient} />
+    </StrictMode>,
+  ),
 );

@@ -3,6 +3,7 @@ export * from "./client.js";
 export * from "./model/fold.js";
 export * from "./model/status.js";
 export * from "./model/format.js";
+export { listedPrice, type TokenPrice } from "./model/pricing.js";
 export * from "./model/store.js";
 export { HeliconController, browserPlatform, hashToRoute, routeToHash, type Platform } from "./model/controller.js";
 export { HeliconApp, type HeliconAppProps } from "./app/HeliconApp.js";
